@@ -1,0 +1,22 @@
+# data/dataset.yaml
+# ──────────────────────────────────────────────────────────
+# Dataset configuration for YOLO training
+# Edit this file to match your own dataset
+# ──────────────────────────────────────────────────────────
+
+# Root directory of the dataset (absolute or relative to this file)
+path: data/
+
+# Relative paths to image directories
+train: images/train
+val:   images/val
+# test: images/test   # optional
+
+# Number of classes
+nc: 3
+
+# Class names (order must match the label IDs in .txt files)
+names:
+  0: cat
+  1: dog
+  2: car

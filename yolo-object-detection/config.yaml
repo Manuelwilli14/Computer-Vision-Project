@@ -1,0 +1,34 @@
+# ─────────────────────────────────────────────
+#  YOLO Object Detection — Configuration File
+# ─────────────────────────────────────────────
+
+# ── Detection ──────────────────────────────
+detection:
+  model: models/yolov8n.pt   # Path to weights
+  conf: 0.25                 # Confidence threshold
+  iou: 0.45                  # IoU threshold (NMS)
+  imgsz: 640                 # Inference image size
+  device: cpu                # 'cpu', '0' (GPU), 'mps'
+  classes: null              # null = all classes, or list e.g. [0, 1, 2]
+  max_det: 300               # Max detections per image
+
+# ── Training ───────────────────────────────
+training:
+  model: yolov8n.pt          # Base pretrained model
+  data: data/dataset.yaml    # Dataset config path
+  epochs: 100
+  batch: 16
+  imgsz: 640
+  device: 0
+  workers: 8
+  patience: 50               # Early stopping patience
+  save_period: 10            # Save checkpoint every N epochs
+  project: runs/train
+  name: exp
+
+# ── Paths ──────────────────────────────────
+paths:
+  images: data/images
+  videos: data/videos
+  models: models
+  results: results
